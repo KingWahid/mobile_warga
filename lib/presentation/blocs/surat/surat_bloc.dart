@@ -7,7 +7,7 @@ import 'surat_state.dart';
 class SuratBloc extends Bloc<SuratEvent, SuratState> {
   final GetSuratListUseCase getSuratListUseCase;
   final GetSuratByIdUseCase getSuratByIdUseCase;
-  
+
   SuratBloc({
     required this.getSuratListUseCase,
     required this.getSuratByIdUseCase,
@@ -15,7 +15,7 @@ class SuratBloc extends Bloc<SuratEvent, SuratState> {
     on<LoadSuratList>(_onLoadSuratList);
     on<LoadSuratById>(_onLoadSuratById);
   }
-  
+
   Future<void> _onLoadSuratList(LoadSuratList event, Emitter<SuratState> emit) async {
     emit(SuratLoading());
     
@@ -26,7 +26,7 @@ class SuratBloc extends Bloc<SuratEvent, SuratState> {
       (suratList) => emit(SuratLoaded(suratList)),
     );
   }
-  
+
   Future<void> _onLoadSuratById(LoadSuratById event, Emitter<SuratState> emit) async {
     emit(SuratLoading());
     
