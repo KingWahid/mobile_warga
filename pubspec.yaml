@@ -60,6 +60,8 @@ dependencies:
   # Navigation
   go_router: ^16.0.0
 
+  signature: ^5.4.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
